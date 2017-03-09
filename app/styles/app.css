@@ -1,0 +1,167 @@
+
+
+.submit{
+    margin-top:16px;
+    margin-right:16px;
+    height:40px;
+}
+header.logo{
+    background-color: #8c9cb1;
+    width:974px;
+    height:96px;
+    margin:auto;
+}
+
+div.listof{
+    width:912px;
+    height:56px;
+    margin:auto;
+    margin-top: 100px;
+}
+img.logo{
+    top:0px;
+    position:absolute;
+    margin-left: 32px;
+    margin-top: 32px;
+ 
+    height:32px;
+    width:32px;
+}
+
+th{
+    color:#757575;
+    font-size: :14px;
+    line-height: 16px;
+    font-weight: 500;
+    height: 48px;
+    padding-top:7px;
+    margin:auto !important;
+}
+div.columnName{
+    padding-top:0px;
+    padding-left:10px;
+    margin-top:12px;
+    margin:auto;
+}
+th.fullname{
+    width: 205px;
+}
+
+th.email{
+    width:300px;
+}
+
+th.phone{
+    width:200px;
+}
+div.rowtable{
+    padding-top:16px;
+    padding-left:10px;
+}
+td{
+    height: 72px;
+    color:#505050;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    margin:auto;
+}
+h3.name{
+    color:white;
+    top:0px;
+    margin-left: 72px;
+    margin-top: 34px;
+    position:absolute;
+}
+h2.listof{
+    color:#7e7e7e;
+}
+span.edit{
+    margin-right:20px;
+    margin-left:70px;
+}
+
+body{
+    background-color: #eff3f8;
+}
+
+div.participants{
+    margin-top: 10px;
+}
+i.but{
+    color:#909090;
+    width:24px;
+    height: 24px;
+}
+
+button.cancelEdit{
+    height:40px;
+    background-color: #eff3f8;
+    border:none;
+    color:#07f;
+    width: 80px;
+    font-size: 16px;
+    font-weight: 500;
+}
+button.saveEdit{
+    height:40px;
+    background-color: #07f;
+    width: 80px;
+    border:none;
+    color:#ffffff;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.list{
+    margin: auto;
+    width: 912px;
+    height: 72px;
+    background-color: #ffffff;
+}
+
+
+div.fullname{
+    margin-left:16px;
+    margin-top:16px;
+    margin-right:10px;
+}
+input.fullname{
+    height:40px;
+    width:180px;
+}
+
+div.email{
+    margin-top:16px;
+    margin-right:10px;
+}
+input.email{
+    height:40px;
+    width:280px;
+}
+
+div.phone{
+    margin-top:16px;
+    margin-right:88px;
+}
+input.phone{
+    height:40px;
+    width:180px;
+}
+
+div.addnew{
+    margin-top:16px;
+    margin-right:16px;
+}
+
+button.addnew{
+    height:40px;
+    background-color:#eff3f8;
+    border: none;
+    width:120px; 
+}
+.pagi{
+    margin:auto;
+    left:45%;
+    position: absolute;
+}

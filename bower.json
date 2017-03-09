@@ -1,0 +1,26 @@
+{
+  "name": "NordSoftware",
+  "authors": [
+    "Ngocvovn <duyngocvo@gmail.com>"
+  ],
+  "description": "Application for Trainee Position",
+  "main": "index.html",
+  "keywords": [
+    "Nord",
+    "Software"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "angular": "1.4.8",
+    "angular-bootstrap": "0.14.3"
+  }
+}
