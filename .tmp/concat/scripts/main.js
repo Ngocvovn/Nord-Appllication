@@ -383,7 +383,7 @@ app.controller('AppController',['GenerateDataService','$scope',function(Generata
     };
 
     $scope.setPagingData($scope.currentPage);
-    console.log($scope.PageParticipants);
+
 
     $scope.sortedName= true;
     $scope.sortedEmail= false;
@@ -513,6 +513,34 @@ app.controller('AppController',['GenerateDataService','$scope',function(Generata
 
     };
 
+    $scope.sortParticipants = function(){
+        if($scope.sortedName){
+            if(!$scope.reversedName){
+                $scope.normalSortName();
+            }
+            else{
+                $scope.reversedSortName(); 
+            }
+
+        }
+        else if($scope.sortedEmail){
+            if(!$scope.reversedEmail){
+                $scope.normalSortEmail();
+            }
+            else{
+                $scope.reversedSortEmail(); 
+            }
+        }
+        else{
+            if(!$scope.reversedPhone){
+                $scope.normalSortPhone();
+            }
+            else{
+                $scope.reversedSortPhone(); 
+            }
+        }
+    };
+
     $scope.addParticipant = function(){
         if($scope.new.fullname===""||$scope.new.email===""||$scope.new.phone===""){
             window.alert("please fill in the form");
@@ -527,31 +555,7 @@ app.controller('AppController',['GenerateDataService','$scope',function(Generata
             $scope.new.fullname="";
             $scope.new.phone="";
             $scope.new.email="";
-            if($scope.sortedName){
-                if(!$scope.reversedName){
-                    $scope.normalSortName();
-                }
-                else{
-                    $scope.reversedSortName(); 
-                }
-
-            }
-            else if($scope.sortedEmail){
-                if(!$scope.reversedEmail){
-                    $scope.normalSortEmail();
-                }
-                else{
-                    $scope.reversedSortEmail(); 
-                }
-            }
-            else{
-                if(!$scope.reversedPhone){
-                    $scope.normalSortPhone();
-                }
-                else{
-                    $scope.reversedSortPhone(); 
-                }
-            }
+            $scope.sortParticipants();
             $scope.setPagingData($scope.currentPage);
         }
     };
@@ -560,10 +564,10 @@ app.controller('AppController',['GenerateDataService','$scope',function(Generata
 
     console.log($scope.participants);
     $scope.editParticipant = function (participant) {
-        console.log($scope.participants.indexOf(participant));
+      
         participant.edit=true;
         $scope.selected = angular.copy(participant);
-        console.log(participant);
+  
     };
     /*$scope.addParticipant = function(){
         //console.log($scope.participants[$scope.participants.length-1].id+1);,id: $scope.participants[$scope.participants.length-1].id+1
@@ -574,6 +578,7 @@ app.controller('AppController',['GenerateDataService','$scope',function(Generata
     };*/
     $scope.saveUpdate = function(participant){
         participant.edit=false;
+        $scope.sortParticipants();
         $scope.setPagingData($scope.currentPage);
     };
 
@@ -587,7 +592,6 @@ app.controller('AppController',['GenerateDataService','$scope',function(Generata
 
     $scope.deleteParticipant = function(participant){
         var i = $scope.participants.indexOf(participant);
-        console.log(i);
         $scope.participants.splice(i,1);
         $scope.setPagingData($scope.currentPage);
     };
