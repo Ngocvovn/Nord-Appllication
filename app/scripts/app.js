@@ -209,6 +209,7 @@ app.controller('AppController',['GenerateDataService','$scope',function(Generata
 
     $scope.sortParticipants = function(){
         if($scope.sortedName){
+            console.log("adsada");
             if(!$scope.reversedName){
                 $scope.normalSortName();
             }
@@ -272,8 +273,8 @@ app.controller('AppController',['GenerateDataService','$scope',function(Generata
     };*/
     $scope.saveUpdate = function(participant){
         participant.edit=false;
-        $scope.sortParticipants();
-        $scope.setPagingData($scope.currentPage);
+        //$scope.sortParticipants();
+        //$scope.setPagingData($scope.currentPage);
     };
 
     $scope.cancelUpdate = function(participant){
