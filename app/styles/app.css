@@ -23,7 +23,7 @@ img.logo{
     position:absolute;
     margin-left: 32px;
     margin-top: 32px;
- 
+
     height:32px;
     width:32px;
 }
@@ -33,9 +33,13 @@ th{
     font-size: :14px;
     line-height: 16px;
     font-weight: 500;
+    margin-bottom: 18px;
     height: 48px;
-    padding-top:7px;
-    margin:auto !important;
+}
+
+div.htable{
+    margin-bottom:7px;
+    padding-left:10px;
 }
 div.columnName{
     padding-top:0px;
@@ -55,8 +59,17 @@ th.phone{
     width:200px;
 }
 div.rowtable{
-    padding-top:16px;
+    margin-top: 16px;
     padding-left:10px;
+    padding-bottom: 16px;
+    height: 40px;
+}
+
+div.rowtableb{
+    margin-top: 8px;
+    padding-left:10px;
+    padding-bottom: 16px;
+    height: 40px;
 }
 td{
     height: 72px;
@@ -76,9 +89,16 @@ h3.name{
 h2.listof{
     color:#7e7e7e;
 }
+
+
 span.edit{
+
     margin-right:20px;
     margin-left:70px;
+}
+
+span.rowtablep{
+    margin-top: 8px;
 }
 
 body{
@@ -89,6 +109,7 @@ div.participants{
     margin-top: 10px;
 }
 i.but{
+    margin-top:12px;
     color:#909090;
     width:24px;
     height: 24px;
@@ -129,32 +150,57 @@ div.fullname{
 input.fullname{
     height:40px;
     width:180px;
+
+}
+input.rowfullname{
+    margin-top:8px;
+    padding-left:5px;
+    height:40px;
+    width:180px;
+
 }
 
 div.email{
     margin-top:16px;
     margin-right:10px;
+
 }
 input.email{
     height:40px;
     width:280px;
 }
 
+input.rowemail{
+    margin-top:8px;
+    padding-left:5px;
+    height:40px;
+    width:280px;
+}
 div.phone{
     margin-top:16px;
     margin-right:88px;
 }
-input.phone{
-    height:40px;
-    width:180px;
-}
-
-div.addnew{
+div.phone2{
     margin-top:16px;
     margin-right:16px;
 }
+input.phone{
+    height:40px;
+    width:180px;
 
-button.addnew{
+}
+input.rowphone{
+    margin-top:8px;
+    padding-left:5px;
+    height:40px;
+    width:180px;
+}}
+
+div.addnewp{
+    margin-top: 20px;
+}
+
+button.addnewp{
     height:40px;
     background-color:#eff3f8;
     border: none;

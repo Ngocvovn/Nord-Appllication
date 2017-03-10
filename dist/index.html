@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Nord Trainee</title>
 
-        <link rel="stylesheet" href="styles/main.c76546c8bf2e770831e4.css">
+        <link rel="stylesheet" href="styles/main.ad5ea48913c86bd47023.css">
 
     </head>
 
@@ -25,7 +25,7 @@
         </div>
 
         <form class="form-inline list" ng-submit="addParticipant()">
-            
+
             <div class="form-group fullname">
 
                 <input type="text" class="fullname" placeholder="Full name" ng-model="new.fullname" pattern="[a-zA-Z][a-zA-Z ]{4,}">
@@ -40,41 +40,38 @@
                 <input type="text" class="phone" placeholder="Phone number"  ng-model="new.phone" pattern="[0-9]{10,}">
             </div>
 
-            <div class="form-group addnew">
-
-                <button type="submit" class="addnew" >Add new</button>
+            <div class="form-group phone2">
+               
+                <button class="addnewp" type="submit">Add new</button>
+             
             </div>
         </form>
-        
+
 
         <div class= "container participants">
 
-            
             <table class="table list">
                 <thead>
-                    <th class="fullname"><div class="columnName"><span class="headers">Full names &nbsp; &nbsp;</span><span ng-click="sortParticipants()"><i ng-show="!reversed" class="glyphicon glyphicon-arrow-down"></i><i ng-show="reversed" class="glyphicon glyphicon-arrow-up"></i></span></div></th>
-                    <th class="email"><div class="columnName">E-mail address</div></th>
-                    <th class="phone"><div class="columnName">Phone number</div></th>
+                    <th class="fullname" ng-click="sortParticipantsName()"><div class="htable">Full names &nbsp;<span ><i ng-show="!reversedName&&sortedName" class="glyphicon glyphicon-arrow-down"></i><i ng-show="reversedName&&sortedName" class="glyphicon glyphicon-arrow-up"></i></span></div></th>
+                    <th class="email"  ng-click="sortParticipantsEmail()"><div class="htable">E-mail address &nbsp;<span><i ng-show="!reversedEmail&&sortedEmail" class="glyphicon glyphicon-arrow-down"></i><i ng-show="reversedEmail&&sortedEmail" class="glyphicon glyphicon-arrow-up"></i></span></div></th>
+                    <th class="phone" ng-click="sortParticipantsPhone()"><div class="htable">Phone number &nbsp;<span ><i ng-show="!reversedPhone&&sortedPhone" class="glyphicon glyphicon-arrow-down"></i><i ng-show="reversedPhone&&sortedPhone" class="glyphicon glyphicon-arrow-up"></i></span></div></th>
                     <th>                  </th>
-
                 </thead>
                 <tbody>
                     <tr ng-repeat="participant in PageParticipants" style="height:72px">
-                        <td><div class="rowtable"><span class="inside" style="margin:auto" ng-show="!participant.edit" >{{participant.fullname}}</span>
-                            <input class="fullname" type="text" ng-model="participant.fullname" ng-show="participant.edit"></div></td>
-                        <td><div class="rowtable"><span ng-show="!participant.edit">{{participant.email}}</span>
-                            <input class="email" type="email" ng-model="participant.email" ng-show="participant.edit"></div></td>
-                        <td><div class="rowtable"><span ng-show="!participant.edit">{{participant.phone}}</span>
-                            <input class="phone" type="text" ng-model="participant.phone" ng-show="participant.edit"></div></td>
-
+                        <td ng-click="editParticipant(participant)"><div ng-show="!participant.edit" class="rowtable"><span class="rowtablep"  >{{participant.fullname}}</span></div>
+                            <input class="rowfullname" type="text" ng-model="participant.fullname" ng-show="participant.edit"></td>
+                        <td ng-click="editParticipant(participant)"><div ng-show="!participant.edit" class="rowtable"><span class="rowtablep" >{{participant.email}}</span></div>
+                            <input class="rowemail" type="email" ng-show="participant.edit" ng-model="participant.email" ></td>
+                        <td ng-click="editParticipant(participant)"><div  ng-show="!participant.edit" class="rowtable"><span class="rowtablep">{{participant.phone}}</span></div>
+                            <input class="rowphone" type="text" ng-model="participant.phone" ng-show="participant.edit"></td>
                         <td>
-                            <div class="rowtable">
-
-                            <span class="edit"  ng-show="!participant.edit" ng-click="editParticipant(participant)" ><i class="glyphicon glyphicon-pencil but"></i></span>
-                            <span  ng-show="!participant.edit" ng-click="deleteParticipant(participant)" ><i class="glyphicon glyphicon-trash but"></i></span>
-                            <button ng-show="participant.edit" class="cancelEdit" ng-click="cancelUpdate(participant)">Cancel</button>
-                            <button ng-show="participant.edit" class="saveEdit" ng-click="saveUpdate(participant)">Save</button>
-                                </div>
+                            <div class="rowtableb">
+                                <span class="edit"  ng-show="!participant.edit" ng-click="editParticipant(participant)" ><i  class="glyphicon glyphicon-pencil but"></i></span>
+                                <span  ng-show="!participant.edit" ng-click="deleteParticipant(participant)" ><i class="glyphicon glyphicon-trash but"></i></span>
+                                <button ng-show="participant.edit" class="cancelEdit" ng-click="cancelUpdate(participant)">Cancel</button>
+                                <button ng-show="participant.edit" class="saveEdit" ng-click="saveUpdate(participant)">Save</button>
+                            </div>
                         </td>
 
                     </tr>
@@ -83,10 +80,10 @@
 
             </table>
             <div class="pagi">
-            <uib-pagination total-items="participants.length" ng-model="currentPage" items-per-page="itemsPerPage" ng-click="setPagingData(currentPage)"></uib-pagination>
-                </div>
+                <uib-pagination total-items="participants.length" ng-model="currentPage" items-per-page="itemsPerPage" ng-click="setPagingData(currentPage)"></uib-pagination>
+            </div>
         </div>
-        <script src="scripts/main.d8424b2a5a727771b72c.js"></script>
+        <script src="scripts/main.c0069df4fc5056256541.js"></script>
     </body>
 
 </html>

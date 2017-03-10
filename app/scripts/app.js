@@ -46,6 +46,18 @@ app.factory('GenerateDataService',function(){
 
 app.controller('AppController',['GenerateDataService','$scope',function(GenerataDataService,$scope){
     $scope.participants= GenerataDataService;
+    $scope.normalSortName= function(){
+        $scope.participants.sort(function(a,b){
+            if(a.fullname < b.fullname){
+                return -1;
+            } 
+            else if(a.fullname > b.fullname) {
+                return 1;
+            }
+            return 0;
+        });
+    };
+    $scope.normalSortName();
     $scope.new ={
         fullname:"",
         email:"",
@@ -67,45 +79,130 @@ app.controller('AppController',['GenerateDataService','$scope',function(Generata
     $scope.setPagingData($scope.currentPage);
     console.log($scope.PageParticipants);
 
-    $scope.sorted= false;
+    $scope.sortedName= true;
+    $scope.sortedEmail= false;
+    $scope.sortedPhone=false;
 
-    $scope.reversed= false;
-
-    $scope.normalSort= function(){
+    $scope.reversedName= false;
+    $scope.reversedEmail= true;
+    $scope.reversedPhone= true;
+    $scope.normalSortEmail= function(){
         $scope.participants.sort(function(a,b){
-            if(a.fullname < b.fullname){
+            if(a.email < b.email){
                 return -1;
             } 
-            else if(a.fullname > b.fullname) {
+            else if(a.email > b.fullname) {
                 return 1;
             }
             return 0;
         });
     };
-
-    $scope.reversedSort= function(){
+    $scope.reversedSortEmail= function(){
         $scope.participants.sort(function(a,b){
-            if(a.fullname < b.fullname){
+            if(a.email < b.email){
                 return 1;
             } 
-            else if(a.fullname > b.fullname) {
+            else if(a.email > b.email) {
                 return -1;
             }
             return 0;
         });
     };
 
-    $scope.sortParticipants = function(){
+    $scope.sortParticipantsEmail = function(){
 
-        if(!$scope.reversed){
-            $scope.normalSort();
+        if($scope.reversedEmail){
+            $scope.normalSortEmail();
         }
         else{
-            $scope.reversedSort(); 
+            $scope.reversedSortEmail(); 
         }
         $scope.setPagingData($scope.currentPage);
-        $scope.reversed=!$scope.reversed;
-        $scope.sorted=true;
+        $scope.reversedEmail=!$scope.reversedEmail;
+
+        $scope.sortedName= false;
+        $scope.sortedEmail= true;
+        $scope.sortedPhone=false;
+        $scope.reversedName= true;
+
+        $scope.reversedPhone= true;
+
+    };
+    $scope.normalSortPhone= function(){
+        $scope.participants.sort(function(a,b){
+            if(a.phone < b.phone){
+                return -1;
+            } 
+            else if(a.phone > b.phone) {
+                return 1;
+            }
+            return 0;
+        });
+    };
+    $scope.reversedSortPhone= function(){
+        $scope.participants.sort(function(a,b){
+            if(a.phone < b.phone){
+                return 1;
+            } 
+            else if(a.phone > b.phone) {
+                return -1;
+            }
+            return 0;
+        });
+    };
+
+    $scope.sortParticipantsPhone = function(){
+
+        if($scope.reversedPhone){
+            $scope.normalSortPhone();
+        }
+        else{
+            $scope.reversedSortPhone(); 
+        }
+        $scope.setPagingData($scope.currentPage);
+        $scope.reversedPhone=!$scope.reversedPhone;
+
+        $scope.sortedName= false;
+        $scope.sortedEmail= false;
+        $scope.sortedPhone=true;
+        $scope.reversedName= true;
+
+        $scope.reversedEmail= true;
+
+    };
+
+
+
+    $scope.reversedSortName= function(){
+        $scope.participants.sort(function(a,b){
+            if(a.fullname < b.fullname){
+                return 1;
+            } 
+            else if(a.fullname > b.fullname) {
+                return -1;
+            }
+            return 0;
+        });
+    };
+
+    $scope.sortParticipantsName = function(){
+
+        if($scope.reversedName){
+            $scope.normalSortName();
+        }
+        else{
+            $scope.reversedSortName(); 
+        }
+        $scope.setPagingData($scope.currentPage);
+        $scope.reversedName=!$scope.reversedName;
+        $scope.sortedName= true;
+        $scope.sortedEmail= false;
+        $scope.sortedPhone=false;
+        $scope.reversedEmail= true;
+
+        $scope.reversedPhone= true;
+
+
 
 
     };
@@ -124,15 +221,32 @@ app.controller('AppController',['GenerateDataService','$scope',function(Generata
             $scope.new.fullname="";
             $scope.new.phone="";
             $scope.new.email="";
-            if($scope.sorted){
-                if($scope.reversed){
-                    $scope.normalSort();
+            if($scope.sortedName){
+                if(!$scope.reversedName){
+                    $scope.normalSortName();
                 }
                 else{
-                    $scope.reversedSort(); 
+                    $scope.reversedSortName(); 
                 }
-                $scope.setPagingData($scope.currentPage);
+
             }
+            else if($scope.sortedEmail){
+                if(!$scope.reversedEmail){
+                    $scope.normalSortEmail();
+                }
+                else{
+                    $scope.reversedSortEmail(); 
+                }
+            }
+            else{
+                if(!$scope.reversedPhone){
+                    $scope.normalSortPhone();
+                }
+                else{
+                    $scope.reversedSortPhone(); 
+                }
+            }
+            $scope.setPagingData($scope.currentPage);
         }
     };
 
