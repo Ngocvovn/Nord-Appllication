@@ -1,36 +1,60 @@
 
+# Nord application
 This my application for trainee position.
 I have used AngularJs instead of ReactJs and sorry for that.
+* [AngularJs](https://angularjs.org/) - The web framework used
+* [Bootstrap](http://getbootstrap.com/) - CSS library
+* [Grunt](https://gruntjs.com/) - Task manager
 
+
+## Getting Started
 I have hosted it in my page hope you have a look 
+```
 http://users.metropolia.fi/~ngocv/
-In this project I have used Bower to install libraries and Grunt for task management.
-I also using pattern for input to validate input when user creates new participant and this page also has
- pagination which contains 20 participants each page.
+```
+
+### Prerequisites
+
+First you need to install npm
+Then you need to install some some libraries to make it works
+
+
+```
+npm install -g grunt-cli
+
+npm install grunt --save-dev
+
+npm install grunt-contrib-jshint --save-dev
+
+npm install jshint-stylish --save-dev
+
+npm install time-grunt --save-dev
+
+npm install jit-grunt --save-dev
+
+npm install grunt-contrib-concat --save-dev
+
+npm install grunt-contrib-copy --save-dev
+
+npm install grunt-contrib-uglify --save-dev
+
+npm install grunt-contrib-clean --save-dev
  
- Project Title
-
-One Paragraph of project description goes here
-
-Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-Prerequisites
-
-What things you need to install the software and how to install them
-
-Give examples
-Installing
-
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
-
-Give the example
-And repeat
-
-until finished
-End with an example of getting some data out of the system or using it for a little demo
+npm install grunt-contrib-compass --save-dev
  
+npm install grunt-filerev --save-dev
+ 
+npm install grunt-usemin --save-dev
 
+npm install grunt-contrib-watch --save-dev
+
+npm install grunt-contrib-connect --save-dev
+```
+
+### Usage
+To run it please type 
+
+```
+grunt serve
+```
+It will use port 9000 to run the application
