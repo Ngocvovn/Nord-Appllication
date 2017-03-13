@@ -11,7 +11,7 @@
     height:40px;
 }
 header.logo{
-    background-color: #8c9cb1;
+    background-color: #adb5bd;
     width:974px;
     height:96px;
     margin:auto;
@@ -92,7 +92,7 @@ h3.name{
     position:absolute;
 }
 h2.listof{
-    color:#7e7e7e;
+    color:#757575;
 }
 
 
@@ -107,7 +107,7 @@ span.rowtablep{
 }
 
 body{
-    background-color: #eff3f8;
+    background-color: #f1f1f1;
 }
 
 div.participants{
@@ -153,6 +153,7 @@ div.fullname{
     margin-right:10px;
 }
 input.fullname{
+    color:#505050;
     height:40px;
     width:180px;
 
@@ -183,9 +184,12 @@ input.rowemail{
 }
 
 input{
-    background-color: #eff3f8;
+    background-color: #fafafa;
     border: black;
     padding-left: 10px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
 }
 div.phone{
     margin-top:16px;
@@ -196,7 +200,7 @@ div.phone2{
     margin-right:16px;
 }
 input.phone{
-    
+
     height:40px;
     width:180px;
 
@@ -213,10 +217,14 @@ div.addnewp{
 }
 
 button.addnewp{
+    color:#757575;
     height:40px;
-    background-color:#eff3f8;
+    background-color:#ededed;
     border: none;
     width:120px; 
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
 }
 .pagi{
     margin:auto;
